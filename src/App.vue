@@ -7,7 +7,6 @@
 
 <script>
   import Navigation from "./components/Navigation.vue";
-
   export default {
     name: "App",
     components: {
@@ -51,7 +50,7 @@
       grid-template-columns: minmax(200px, 360px) 4fr;
     }
     @include screen(tab) {
-      grid-template-rows: auto auto;
+      grid-template-rows: 0px auto;
       &-navigation {
         background: white;
       }

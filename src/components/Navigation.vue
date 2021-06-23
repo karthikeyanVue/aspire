@@ -7,10 +7,10 @@
       </div>
       <div class="soft-grid navigation-icons">
         <div v-for="link in links" :key="link.name">
-          <div class="navigation-link">
+          <router-link :exact-active-class="'active'" class="navigation-link" :to="link.route">
             <svg v-svg :symbol="link.icon" size="0 0 24 24" role="presentation" class="navigation-link--icon mr"></svg>
-            <router-link class="navigation-link--text" :to="link.route">{{ link.name }}</router-link>
-          </div>
+            <span class="navigation-link--text">{{ link.name }}</span>
+          </router-link>
         </div>
       </div>
     </div>
@@ -24,9 +24,9 @@
         links: [
           { name: "Home", icon: "Home", route: "/" },
           { name: "Cards", icon: "Card", route: "/card" },
-          { name: "Payments", icon: "Payments", route: "/card" },
-          { name: "Credit", icon: "Credit", route: "/card" },
-          { name: "Settings", icon: "Account", route: "/card" },
+          { name: "Payments", icon: "Payments", route: "/payment" },
+          { name: "Credit", icon: "Credit", route: "/credit" },
+          { name: "Settings", icon: "Account", route: "/settings" },
         ],
       };
     },
@@ -69,22 +69,35 @@
     &-link {
       display: flex;
       align-items: center;
+      text-decoration: none;
       &--icon {
         fill: white;
       }
       &--text {
         color: white;
-        text-decoration: none;
       }
+      &.active &--icon {
+        fill: #01d167;
+      }
+      &.active &--text {
+        color: #01d167;
+      }
+
       @include screen(tab) {
         flex-flow: column;
         justify-content: center;
         text-align: center;
         &--icon {
           margin: 0;
-          fill: #01d167;
+          fill: #ccc;
         }
         &--text {
+          color: #ccc;
+        }
+        &.active &--icon {
+          fill: #01d167;
+        }
+        &.active &--text {
           color: #01d167;
         }
       }

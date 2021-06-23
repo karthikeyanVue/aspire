@@ -2,6 +2,7 @@ $golden-ratio: 1.618;
 
 $primary: #325baf !default;
 $secondary: #0c365a !default;
+$tertiary: #01d167 !default;
 $warning: hsl(38, 98%, 75%) !default;
 $error: hsl(5, 99%, 74%) !default;
 $font: hsl(218, 64%, 30%) !default;
@@ -37,4 +38,4 @@ $font-sizes: (
   "h7": 4px,
 );
 
-$button-type: ("primary" $primary white, "secondary" $secondary white, "error" $error white);
+$button-type: ("primary" $primary white, "secondary" $secondary white, "tertiary" $tertiary white, "error" $error white);

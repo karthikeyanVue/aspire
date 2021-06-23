@@ -122,7 +122,7 @@
             top: 150px;
             background: $secondary;
             > div {
-              max-width: 400px;
+              max-width: 320px;
               margin: 0 auto;
             }
           }
@@ -145,26 +145,6 @@
     }
   }
 
-  .accordion {
-    border: 1px solid #f5f5f5;
-    border-radius: 8px;
-    max-height: 100%;
-
-    &-header {
-      background: #f5f9ff;
-      height: 72px;
-      display: flex;
-      align-items: center;
-    }
-    &-content {
-      overflow: auto;
-      max-height: calc(100% - 182px);
-      &--item {
-        display: flex;
-        border-bottom: 1px solid #f5f9ff;
-      }
-    }
-  }
   .primary-color {
     color: $primary;
   }
