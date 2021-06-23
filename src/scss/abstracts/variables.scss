@@ -1,0 +1,40 @@
+$golden-ratio: 1.618;
+
+$primary: #325baf !default;
+$secondary: #0c365a !default;
+$warning: hsl(38, 98%, 75%) !default;
+$error: hsl(5, 99%, 74%) !default;
+$font: hsl(218, 64%, 30%) !default;
+$light-font: hsl(218, 28%, 85%) !default;
+$dark-color: #253855 !default;
+$light-color: #586f94 !default;
+$grey-backdrop: #aaa2c6 !default;
+$radius: 10px !default;
+$grid-base: 12px !default;
+
+$grid-sizes: (
+  "-xl": 3,
+  "-lg": 2,
+  "": 1,
+  "-xs": 0,
+);
+$border-radius: 8px;
+
+$colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "warning": $warning,
+  "error": $error,
+);
+
+$font-sizes: (
+  "h1": 48px,
+  "h2": 40px,
+  "h3": 32px,
+  "h4": 24px,
+  "h5": 16px,
+  "h6": 8px,
+  "h7": 4px,
+);
+
+$button-type: ("primary" $primary white, "secondary" $secondary white, "error" $error white);

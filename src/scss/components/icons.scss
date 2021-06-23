@@ -1,0 +1,57 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+@import "../abstracts/functions";
+
+.flat-icon {
+  &--icon {
+    > svg {
+      width: $grid-base * pow($golden-ratio, 3);
+      height: $grid-base * pow($golden-ratio, 3);
+      stroke: $primary;
+      margin: $grid-base;
+    }
+    display: inline-flex;
+    background: lighten($grey-backdrop, 10%);
+    border-radius: $border-radius;
+    transition: 0.3s;
+    @include box-shadow(0px, 0px, 8px, -2px, $grey-backdrop);
+  }
+  &--text {
+    margin-top: $grid-base;
+  }
+  &.action {
+    cursor: pointer;
+  }
+  &.action:hover &--icon {
+    position: relative;
+    top: -2px;
+    @include box-shadow(0px, 8px, 32px, -12px, $primary);
+  }
+
+  &.action:hover &--text {
+    color: darken($primary, 20%);
+  }
+
+  &.active &--icon {
+    position: relative;
+    top: -2px;
+    > svg {
+      stroke: white;
+    }
+    background: $primary;
+    @include box-shadow(0px, 8px, 32px, -8px, shadow-color($primary));
+  }
+  &.active &--text {
+    color: $primary;
+    margin-top: $grid-base;
+  }
+}
+
+.inline-icon {
+  cursor: pointer;
+  > svg {
+    width: $grid-base * 4;
+    height: $grid-base * 3.16;
+    stroke: black;
+  }
+}

@@ -1,0 +1,45 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+@import "../abstracts/functions";
+
+@mixin button($color, $text_color) {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  padding: $grid-base 2 * $grid-base;
+  user-select: none;
+  text-shadow: 0 2px 2px shadow-color($color);
+  @include rounded($border-radius);
+  @include box-shadow(2px, 2px, 8px, -2px, shadow-color($color));
+  color: $text_color;
+  font-weight: bold;
+  background: $color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+  @include gradient(gradient-color($color), $color);
+  &:hover {
+    text-decoration: none;
+    @include box-shadow(0px, 2px, 8px, -2px, shadow-color($color));
+    @include gradient($color, gradient-color($color));
+  }
+  &:active {
+    position: relative;
+    top: 1px;
+    color: saturate($text_color, 15%);
+    @include box-shadow(2px, 0px, 8px, -2px, shadow-color($color));
+    @include gradient(darken($color, 5%), darken(gradient-color($color), 10%));
+  }
+}
+
+@each $type, $color, $text-color in $button-type {
+  .btn-#{$type} {
+    @include button($color, $text-color);
+  }
+}
+
+.btn {
+  @include button(white, $font);
+}

@@ -1,0 +1,39 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+@import "../abstracts/functions";
+
+.option {
+  width: 100%;
+  border: 1px solid darken($light-font, 10%);
+  border-radius: $border-radius;
+  color: darken($light-font, 15%);
+  &--icon {
+    > svg {
+      width: $grid-base * pow($golden-ratio, 2);
+      height: $grid-base * pow($golden-ratio, 2);
+      stroke: darken($light-font, 15%);
+    }
+    display: inline-flex;
+  }
+  &.action {
+    cursor: pointer;
+  }
+  &.action:hover {
+    background: lighten($grey-backdrop, 5%);
+    border: 1px solid transparent;
+    @include box-shadow(0px, 2px, 8px, -2px, $grey-backdrop);
+  }
+
+  &.action.active {
+    border: 2px solid $primary;
+    background: white;
+    color: $primary;
+    @include box-shadow(0px, 4px, 16px, -4px, $primary);
+  }
+
+  &.action.active &--icon {
+    > svg {
+      stroke: $primary;
+    }
+  }
+}

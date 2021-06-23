@@ -1,0 +1,85 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+@import "../abstracts/functions";
+
+@each $name, $size in $grid-sizes {
+  .ma#{$name} {
+    margin: $grid-base *
+      pow($golden-ratio, $size)
+      $grid-base *
+      pow($golden-ratio, $size);
+  }
+  .mx#{$name} {
+    margin-left: $grid-base * pow($golden-ratio, $size);
+    margin-right: $grid-base * pow($golden-ratio, $size);
+  }
+  .my#{$name} {
+    margin-top: $grid-base * pow($golden-ratio, $size);
+    margin-bottom: $grid-base * pow($golden-ratio, $size);
+  }
+  .mt#{$name} {
+    margin-top: $grid-base * pow($golden-ratio, $size);
+  }
+  .mr#{$name} {
+    margin-right: $grid-base * pow($golden-ratio, $size);
+  }
+  .mb#{$name} {
+    margin-bottom: $grid-base * pow($golden-ratio, $size);
+  }
+  .ml#{$name} {
+    margin-left: $grid-base * pow($golden-ratio, $size);
+  }
+  .pa#{$name} {
+    padding: $grid-base *
+      pow($golden-ratio, $size)
+      $grid-base *
+      pow($golden-ratio, $size);
+  }
+  .py#{$name} {
+    padding-top: $grid-base * pow($golden-ratio, $size);
+    padding-bottom: $grid-base * pow($golden-ratio, $size);
+  }
+  .px#{$name} {
+    padding-left: $grid-base * pow($golden-ratio, $size);
+    padding-right: $grid-base * pow($golden-ratio, $size);
+  }
+  .pt#{$name} {
+    padding-top: $grid-base * pow($golden-ratio, $size);
+  }
+  .pr#{$name} {
+    padding-right: $grid-base * pow($golden-ratio, $size);
+  }
+  .pb#{$name} {
+    padding-bottom: $grid-base * pow($golden-ratio, $size);
+  }
+  .pl#{$name} {
+    padding-left: $grid-base * pow($golden-ratio, $size);
+  }
+}
+
+hr {
+  padding: 0;
+  text-align: center;
+  height: 0px;
+  border-top: 1px solid darken($light-font, 10%);
+  margin: 0;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $light-font darken($light-font, 13%);
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 6px;
+}
+*::-webkit-scrollbar-track {
+  background: $light-font;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: darken($light-font, 13%);
+  border-radius: 20px;
+}

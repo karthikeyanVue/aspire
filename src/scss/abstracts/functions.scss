@@ -1,0 +1,30 @@
+@function shadow-color($color) {
+  $result: saturate($color, 10%);
+  @return darken($result, 20%);
+}
+
+@function gradient-color($color) {
+  $result: adjust-hue($color, 10deg);
+  @return darken($result, 5%);
+}
+
+@function round-even($number) {
+  $result: round($number);
+  @if $result % 2 == 0 {
+    @return $result;
+  } @else {
+    @return $result + 1;
+  }
+}
+
+@function pow($number, $exponent) {
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  }
+
+  @return $value;
+}

@@ -1,0 +1,71 @@
+@import "../abstracts/variables";
+@import "../abstracts/functions";
+
+@mixin font-face($font-name, $file-name, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: quote($font-name);
+    src: url($file-name+".eot");
+    src: url($file-name+".eot?#iefix") format("embedded-opentype"), url($file-name+".woff") format("woff"), url($file-name+".ttf") format("truetype"),
+      url($file-name+".svg##{$font-name}") format("svg");
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@mixin google-font($family) {
+  @import url("https://fonts.googleapis.com/css?family=#{$family}");
+}
+@mixin font-size($size) {
+  font-size: $size;
+  line-height: round-even($size * $golden-ratio);
+}
+
+body {
+  @include font-size(round-even($grid-base * $golden-ratio));
+}
+
+@each $text, $size in $font-sizes {
+  #{$text} {
+    @include font-size($size);
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@each $text, $color in $colors {
+  .text-#{$text} {
+    color: $color;
+  }
+}
+
+p {
+  @include font-size(round-even($grid-base * $golden-ratio));
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+.subheading {
+  @include font-size(round-even($grid-base * $golden-ratio * $golden-ratio));
+  font-weight: 500;
+}
+
+.heading {
+  @include font-size(round-even($grid-base * $golden-ratio * $golden-ratio * $golden-ratio));
+  font-weight: 600;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+.text-center {
+  text-align: center;
+}
+
+.light-text {
+  color: darken($light-font, 10%);
+}
+
+.text-white {
+  color: white;
+}
